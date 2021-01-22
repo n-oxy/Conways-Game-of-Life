@@ -20,7 +20,7 @@ cell getCellAt(int y, int x) // starts at 0
     if(cells[y][x].y == y + 1 && cells[y][x].x == x + 1)
         return cells[y][x];
 }
-
+//
 int tick() // play a round
 {
     cell new_cells[maxY][maxX];
