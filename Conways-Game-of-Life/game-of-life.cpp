@@ -89,19 +89,19 @@ int main() // setup
         for (int x = 0; x < maxX; x++)
             cells[y][x] = { (bool)(rand() % 2), y + 1, x + 1 };
     std::string A = "";
-    int alive;
+    int live;
     int dead;
     for(int i = 0; i < 0x7FFFFFFF; i++)
     {
         A = "";
-        alive = 0;
+        live = 0;
         dead = 0;
         for (int y = 0; y < maxY; y++)
         {
             for (int x = 0; x < maxX; x++)
                 if (cells[y][x].live)
                 {
-                    alive++;
+                    live++;
                     A += "x";
                 }
                 else
@@ -113,7 +113,7 @@ int main() // setup
         }
         std::cout << A << std::endl;
         std::cout << maxY << ", " << maxX << " tick [" << i << "]" << std::endl;
-        std::cout << alive << " alive" << std::endl;
+        std::cout << live << " alive" << std::endl;
         std::cout << dead << " dead" << std::endl;
         tick();
         Sleep(800);
