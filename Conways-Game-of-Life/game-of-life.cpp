@@ -49,15 +49,13 @@ int tick() // play a round
             int liveCount = 0;
             int deadCount = 0;
             for (int i = 0; i < 8; i++)
-            {
                 if (adj[i].y > 0)
                 {
                     if (adj[i].live)
                         liveCount += 1;
                     else
                         deadCount += 1;
-                }
-            }/*
+                }/*
             if (y == 0 && x == 2)
             {
                 std::cout << "is live " << cells[y][x].live << " [" << cells[y][x].y << ", " << cells[y][x].x  << "]" << std::endl;
@@ -88,12 +86,8 @@ int main() // setup
 {
     srand(time(0));
     for (int y = 0; y < maxY; y++)
-    {
         for (int x = 0; x < maxX; x++)
-        {
             cells[y][x] = { (bool)(rand() % 2), y + 1, x + 1 };
-        }
-    }
     std::string A = "";
     int alive;
     int dead;
@@ -105,7 +99,6 @@ int main() // setup
         for (int y = 0; y < maxY; y++)
         {
             for (int x = 0; x < maxX; x++)
-            {
                 if (cells[y][x].live)
                 {
                     alive++;
@@ -116,7 +109,6 @@ int main() // setup
                     dead++;
                     A += "-";
                 }
-            }
             A += "\n";
         }
         std::cout << A << std::endl;
